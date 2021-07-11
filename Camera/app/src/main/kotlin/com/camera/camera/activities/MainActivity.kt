@@ -59,7 +59,6 @@ class MainActivity : SimpleActivity(), PhotoProcessor.MediaSavedListener {
         initVariables()
         tryInitCamera()
         supportActionBar?.hide()
-        checkWhatsNewDialog()
         setupOrientationEventListener()
     }
 
@@ -555,18 +554,6 @@ class MainActivity : SimpleActivity(), PhotoProcessor.MediaSavedListener {
         if (isImageCaptureIntent()) {
             setResult(Activity.RESULT_OK)
             finish()
-        }
-    }
-
-    private fun checkWhatsNewDialog() {
-        arrayListOf<Release>().apply {
-            add(Release(33, R.string.release_33))
-            add(Release(35, R.string.release_35))
-            add(Release(39, R.string.release_39))
-            add(Release(44, R.string.release_44))
-            add(Release(46, R.string.release_46))
-            add(Release(52, R.string.release_52))
-            checkWhatsNew(this, BuildConfig.VERSION_CODE)
         }
     }
 }
